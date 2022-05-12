@@ -1,0 +1,163 @@
+<!-- <h1>Our Store Name</h1> -->
+<!-- <h2>{{store.Name}}</h2>
+<img [src]="store.Img"> -->
+
+<!-- <br><hr>
+<label>Enter Your Name</label>
+
+<input class="form-control form-control-lg d-block" type="text" placeholder=".form-control-lg" [(ngModel)]="ClientName">
+<small>{{ClientName}}</small>
+<br> -->
+<!-- <table class="table" *ngIf="IsPurshased">
+  <thead>
+    <tr>
+
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Purchasedate</th>
+      <th scope="col">Img</th>
+      <th scope="col">Items Count</th>
+      <th scope="col">Details</th>
+      
+
+      <th scope="col">Add To Cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of prdListofCat; let j=index">
+      <tr >
+
+        <th scope="row">{{item.id}}</th>
+
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price|currency}}</td>
+
+        <td>{{Purchasedate|date:"mediumTime"}}</td>
+        <td><img [src]="createImgPath(item.image)" alt="profile picture" style="width:60px; height:60px;"  (click)="openDialog(item)"   ></td>
+ 
+       <td ><input type="number" #itemcount class="form-control "></td>
+     
+        <td><a name="" id="" class="btn btn-primary" [routerLink]="['/Product/Products',item.id]" routerLinkActive="router-link-active"  role="button">Details</a></td>
+        
+
+
+        <td><button class="btn btn-secondary"(click) ="Addtocart(item,+itemcount.value)" >Add TO Cart</button></td>
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table> -->
+<!-- <div *ngIf="IsShow">
+  <h3>Thanks for purchasing from our Store {{ClientName}}</h3>
+</div>
+
+<button type="button" (click)="Buy()" class="btn btn-primary"> BUY</button>
+<br> -->
+<div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+  </div>
+  <div class="carousel-inner ">
+    <div class="carousel-item active ">
+      <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=481&q=80" class="d-block " style="width: 1500px; height: 750px;" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img class="d-block  w-50" alt="..." src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block " style="width: 1500px; height: 750px;" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="https://media.istockphoto.com/photos/big-conceptual-smart-watch-picture-id532731865" class="d-block "style="width: 1500px; height: 750px;" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block "style="width: 1500px; height: 750px;" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- <div class="mb-3">
+  <label for="" class="form-label"></label>
+  
+  <select class="form-control" name="cat" id="catsel" [(ngModel)]="selectedcatID">
+      <option value="0"> Select All</option>
+      <option *ngFor="let item of catList" [value]="item.id">
+          {{item.name}}
+      </option>
+  </select>
+  </div> -->
+  
+<div class="card d-inline-block my-5" style="width: 18rem;" *ngFor="let item of prdListofCat">
+  <img [src]="createImgPath(item.image)" alt="profile picture" style="width:250px; height:250px;"  (click)="openDialog(item)"   >
+  <div class="card-body">
+    <h3 class="card-title">{{item.name}}</h3>
+    <p class="card-text">Price:{{item.price|currency}}</p>
+    <div class=" content">
+      <button type="button" class="btn"(click)="increasequatity(item)"><i class="fa fa-plus"></i></button>
+      <span>{{item.quantity}}</span>
+      <button type="button" class="btn" (click)="decreasequatity(item)"><i class="fa fa-minus"></i></button>
+      
+    </div>
+   
+        <button type="button" class="cart_btn"(click) ="addtocartloacalstorage(item)" >Add TO Cart</button>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <section style="background-color: rgb(198, 225, 228);">
+  <div class="container py-5 ml-auto my-4">
+    
+    <input type="text" class="form-control"[(ngModel)]="idNumber" placeholder="Enter Your NID">
+    <br>
+    <select [(ngModel)]="selectdate" class="form-control">
+      <option>FullDate</option>
+      <option>Year</option>
+      <option>Mounth</option>
+      <option>Day</option>
+
+    </select>
+
+  </div>
+  <<div [ngSwitch]="selectdate">
+    <div *ngSwitchCase="'FullDate'">{{idNumber|iDNumber|date:"fullDate"}}</div>
+    <div *ngSwitchCase="'Year'">{{idNumber|iDNumber|date:"YYYY"}}</div>
+    <div *ngSwitchCase="'Mounth'">{{idNumber|iDNumber|date:"MM"}}</div>
+    <div *ngSwitchCase="'Day'">{{idNumber|iDNumber|date:"dd"}}</div>
+
+  </div> 
+</section> -->
+<!-- <div style="background-color: #eee;">
+  <div class="container py-5 ml-auto my-4">
+      <input type="text"   class="form-control "  [(ngModel)]="plainCreditCard">
+      <div>
+          
+              {{plainCreditCard |CreditCard}}
+         
+      </div>
+  </div>
+</div> -->
+<!-- <br>
+<div class="bg-danger">
+  {{orderTotalPrice}}
+</div> -->
+<!-- <label>CraditCard</label>
+
+<div class="form-control form-control-lg d-block"> {{plainCreditCard|CreditCard}}</div> -->

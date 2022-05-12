@@ -1,0 +1,44 @@
+<h1>user</h1>
+<a name="" id="" class="btn btn-primary" [routerLink]="['/register']" routerLinkActive="router-link-active" role="button">Add User</a>
+
+<table class="table" >
+  <thead>
+    <tr>
+
+    
+      <th scope="col">FullName</th>
+      <th scope="col">Email</th>
+      
+     
+      
+     
+     
+
+      
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of userlist; let j=index">
+      <tr >
+
+        
+       
+        <td >{{item.userName}}</td>
+         <td>{{item.email}}</td>
+       
+
+       
+        
+     
+
+        
+
+        <!-- <td><button class="btn btn-secondary"(click) ="delete(item.id)" >Delete</button></td> -->
+
+       
+
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+

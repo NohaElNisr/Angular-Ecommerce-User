@@ -1,0 +1,96 @@
+<br>
+<br>
+<ng-container  *ngIf="getcartDetails.length!=0" >
+<div class="container"><div class="card-table">
+  <div class="cart-product">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Image</th> 
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Sub Total</th>
+            
+          <th scope="col">Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of getcartDetails;let i=index ">
+        <td>
+        {{i+1}}
+        </td>
+        <td>
+        {{item.name}}
+        </td>
+        <td>  <img [src]="createImgPath(item.image)" alt="profile picture" style="width:250px; height:250px;"    >
+        </td>
+        
+        <td>
+        
+          <div class=" content">
+            <button type="button" class="btn"(click)="increasequanit(item.id,item.quantity)"><i class="fa fa-plus"></i></button>
+            <span>{{item.quantity}}</span>
+            <button type="button" (click)="deceasequanit(item.id,item.quantity)" class="btn"><i class="fa fa-minus"></i></button>
+            
+          </div>
+        </td>
+        <td>
+         
+          {{item.price|currency}}
+        </td>
+        <td>   
+      <strong>Total:{{item.quantity*item.price|currency}}</strong>
+      </td>
+        <td> <button (click)="removeitem(item.id)" class="btn "><i   class="fas fa-trash-alt"></i></button></td>
+      </tr>
+      <tr>
+        
+        <!-- <td><button [routerLink]="['/Product/Shopping']" class="btn btn-primary">Shop More</button></td> -->
+        
+
+       
+      </tr>
+    </tbody>
+    </table>
+   
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="mb-5 ">
+    <h3 style="color: cadetblue ;font-size: 30px;">Total Price</h3>
+    <h3 style="color: cadetblue ;font-size: 25px;" >
+      {{totalprice|currency}}
+    </h3>
+    
+      <button type="button"  [routerLink]="['/Product/Shopping']"  class="btn1">Shop More</button>
+    
+    
+      
+
+    
+      <button type="button"  (click)="removeall()" class="btn1">remove all</button>
+  
+  </div>
+
+</div></div>
+</ng-container>
+<br>
+<br>
+
+ <ng-container *ngIf="getcartDetails.length==0" >
+<div class="container">
+  <div class="card">
+  <h5 class="card-title">My Cart</h5>
+  </div>
+  <div class="center">
+    <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+    <h4>Your cart is empty!</h4>
+    <h6>Add item to it now</h6>
+    <button class="btn btn-primary" [routerLink]="['/Product/Shopping']" routerLinkActive="router-link-active" >Shop Now</button>
+  </div>
+  </div>
+  </ng-container> 

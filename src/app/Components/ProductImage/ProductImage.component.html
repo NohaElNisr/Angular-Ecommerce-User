@@ -1,0 +1,34 @@
+<!-- <div class="card  " appProductCard="Blue" style="width: 18rem;" >
+  <img [src]="createImgPath(currprd?.image)" alt="profile picture" style="width:60px; height:60px;">
+  <div class="card-body">
+    <h5 class="card-title">Product Name: {{currprd?.name}}</h5>
+    <p class="card-text">Price: {{currprd?.price}}</p>
+    <p class="card-text">Quantity: {{currprd?.quantity}}</p>
+
+  </div>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button [disabled]="isFirstItem()"type="button" class="btn btn-primary" (click)="prevProduct()">Previous</button>
+    <button type="button" class="btn btn-primary" (click)="GoBack()">Back</button>
+    <button [disabled]="islastItem()"type="button" class="btn btn-primary" (click)="nextProduct()">Next</button>
+  </div>
+</div>
+ -->
+ <mat-dialog-content>  
+  <!-- <mat-toolbar color="accent" style="background-color:darkblue;">  
+
+User Details  
+</mat-toolbar>   -->
+  <br>  
+      
+              
+               <img [src]="createImgPath(currprd?.image)" alt="profile picture" style="width:300px; height:250px;">  
+          
+           
+        
+        
+  </mat-dialog-content>  
+  <mat-dialog-actions align="center">  
+      <button class="mat-raised-button btn btn-danger" (click)="close()">Close</button>  
+  </mat-dialog-actions>
+
+

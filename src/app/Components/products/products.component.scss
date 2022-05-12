@@ -1,0 +1,29 @@
+.btn{
+    background-color:cadetblue ;
+    border-radius: 50%;
+font-size: 16px;
+color: #fff;
+margin: 0px 8px;
+}
+.content span{
+    font-weight: 800;
+    font-size: 18px;
+}
+.cart_btn{
+    border-radius: 4px;
+    background-color:cadetblue;
+    color: #fff;
+    border: 1px solid cadetblue;
+    font-weight: 800;
+    font-size: 18px;
+    margin-top:20px ;
+   
+    padding: 4px 16px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.cart_btn:hover{
+color:cadetblue ;
+background-color: transparent;
+border: 1px solid cadetblue;
+}
